@@ -92,7 +92,7 @@ inquirer
 		},
 	])
 	.then((answers) => {
-		console.log(answers.preguntas_sugerencias);
+		console.log(answers);
 	});
 
 // TODO: Crear una función para escribir el archivo README
