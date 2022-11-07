@@ -1,4 +1,11 @@
-// TODO: Crear una función que devuelva una credencial de licencia según la licencia en la que se pasa
+const geneMkd = {
+	renderLicenseBadge: (license) => {},
+	renderLicenseLink: (license) => {},
+	renderLicenseSection: (license) => {},
+	generateMarkdown: (data) => {},
+};
+
+/* // TODO: Crear una función que devuelva una credencial de licencia según la licencia en la que se pasa
 // Si no hay licencia, devuelva una cadena vacía
 function renderLicenseBadge(license) {}
 
@@ -16,5 +23,5 @@ function generateMarkdown(data) {
 
 `;
 }
-
-module.exports = generateMarkdown;
+ */
+module.exports = geneMkd;

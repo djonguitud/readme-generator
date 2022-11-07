@@ -2,6 +2,7 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const geneMkd = require('./utils/generateMarkdown');
 const file = 'README.md';
 // TODO: Crear una serie de preguntas para la entrada de usuario
 
