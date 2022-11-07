@@ -1,3 +1,5 @@
+'use strict';
+
 const geneMkd = {
 	renderLicenseBadge: (license) => {},
 	renderLicenseLink: (license) => {},

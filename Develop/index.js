@@ -1,3 +1,5 @@
+'use strict';
+
 // TODO: Incluir los paquetes necesarios para esta aplicación
 
 const inquirer = require('inquirer');
@@ -20,7 +22,15 @@ const questions = [
 	'Agrega instrucciones para que te contacten:',
 ];
 
-const titles = ['# Título del Proyecto', '## Licencia', '## Instalación', '## Uso de app', '## Cómo Contribuit', '## Cómo probar la app', '## Preguntas y sugerencias'];
+const titles = [
+	'# Título del Proyecto',
+	'## Licencia',
+	'## Instalación',
+	'## Uso de app',
+	'## Cómo Contribuit',
+	'## Cómo probar la app',
+	'## Preguntas y sugerencias',
+];
 
 inquirer
 	.prompt([
