@@ -23,52 +23,51 @@ const questions = [
 	'Agrega instrucciones para que te contacten:',
 ];
 
-const titles = [
-	'# Título del Proyecto',
-	'## Licencia',
-	'## Instalación',
-	'## Uso de app',
-	'## Cómo Contribuit',
-	'## Cómo probar la app',
-	'## Preguntas y sugerencias',
-];
-
 inquirer
 	.prompt([
 		{
+			type: 'input',
 			name: 'nombre_proyecto',
 			message: questions[0],
 		},
 		{
+			type: 'input',
 			name: 'descripci0n',
 			message: questions[1],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_instalacion',
 			message: questions[2],
 		},
 		{
+			type: 'input',
 			name: 'informacion_uso',
 			message: questions[3],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_contribuciones',
 			message: questions[4],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_probar',
 			message: questions[5],
 		},
 
 		{
+			type: 'input',
 			name: 'github',
 			message: questions[6],
 		},
 		{
+			type: 'input',
 			name: 'email',
 			message: questions[7],
 		},
 		{
+			type: 'input',
 			name: 'preguntas_sugerencias',
 			message: questions[8],
 		},
