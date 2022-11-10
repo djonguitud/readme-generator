@@ -4,9 +4,8 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const geneMkd = require('./utils/generateMarkdown');
+const geneMkd = require('./utils/generateMarkdown.js');
 const file = 'README.md';
-const badges = require('./utils/badges');
 
 // TODO: Crear una serie de preguntas para la entrada de usuario
 //https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#attribution-40-international
@@ -32,7 +31,7 @@ inquirer
 		},
 		{
 			type: 'input',
-			name: 'descripci0n',
+			name: 'descripcion',
 			message: questions[1],
 		},
 		{
@@ -73,7 +72,7 @@ inquirer
 		},
 		{
 			type: 'rawlist',
-			name: 'Licencia',
+			name: 'licencia',
 			message: 'Elige una licencia para tu proyecto:',
 			choices: [
 				'None',
@@ -90,8 +89,20 @@ inquirer
 			],
 		},
 	])
-	.then((answers) => {
-		console.log(answers);
+	.then((data) => {
+		console.log(data);
+		geneMkd(
+			data.nombre_proyecto,
+			data.licencia,
+			data.descripcion,
+			data.instrucciones_instalacion,
+			data.informacion_uso,
+			data.instrucciones_contribuciones,
+			data.instrucciones_probar,
+			data.github,
+			data.email,
+			data.preguntas_sugerencias
+		);
 	});
 
 // TODO: Crear una función para escribir el archivo README
