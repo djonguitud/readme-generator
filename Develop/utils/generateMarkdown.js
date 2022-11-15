@@ -1,6 +1,17 @@
 'use strict';
 const badges = require('./badges');
 
+const renderTableSection = () => {
+	return `### Table de Contenido:\n 
+	1. [Licencia](##Licencia)\n
+	2. [Información](##Información del proyecto)\n
+	3. [Cómo instalar](##Instalación)\n
+	4. [Cómo usar](##Uso de app)\n
+	5. [Cómo contribuir](##Cómo Contribuir)\n
+	6. [Cómo probar](##Cómo probar la app)\n
+	7. [Preguntas y sugerencias](##Preguntas y sugerencias)\n`;
+};
+
 const renderLicenseBadge = (license) => {
 	if (license !== 'None' || license !== undefined) {
 		return `
@@ -25,20 +36,6 @@ const renderTitleSection = (title) => {
 		return;
 	}
 };
-
-/* const renderTitleSection = (title) => {
-	return `### Table de Contenido: 
-	1. [Licencia](#)\n
-	2. [Información](#example2)\n
-	3. [Cómo instalar](#third-example)\n
-	4. [Cómo usar](#fourth-examplehttpwwwfourthexamplecom)\n
-	5. [Cómo contribuir](#)\n
-	6. [Cómo probar](#)`;
-}; */
-
-/* const renderContents = (content) => {
-	return;
-}; */
 
 const renderInfoSection = (info) => {
 	if (info !== undefined) {
@@ -119,6 +116,7 @@ const renderEmail = (email) => {
 const markDownTemplate = (title, lic, info, install, use, contr, test, github, email, query) => {
 	const template = `
 	${renderTitleSection(title)}\n
+	${renderTableSection()}\n
 	${renderLicenseSection(lic)}\n
 	${renderInfoSection(info)}\n
 	${renderInstallationSection(install)}\n
