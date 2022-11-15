@@ -4,9 +4,8 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const geneMkd = require('./utils/generateMarkdown');
+const geneMkd = require('./utils/generateMarkdown.js');
 const file = 'README.md';
-const badges = require('./utils/badges');
 
 // TODO: Crear una serie de preguntas para la entrada de usuario
 //https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#attribution-40-international
@@ -23,58 +22,57 @@ const questions = [
 	'Agrega instrucciones para que te contacten:',
 ];
 
-const titles = [
-	'# Título del Proyecto',
-	'## Licencia',
-	'## Instalación',
-	'## Uso de app',
-	'## Cómo Contribuit',
-	'## Cómo probar la app',
-	'## Preguntas y sugerencias',
-];
-
 inquirer
 	.prompt([
 		{
+			type: 'input',
 			name: 'nombre_proyecto',
 			message: questions[0],
 		},
 		{
-			name: 'descripci0n',
+			type: 'input',
+			name: 'descripcion',
 			message: questions[1],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_instalacion',
 			message: questions[2],
 		},
 		{
+			type: 'input',
 			name: 'informacion_uso',
 			message: questions[3],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_contribuciones',
 			message: questions[4],
 		},
 		{
+			type: 'input',
 			name: 'instrucciones_probar',
 			message: questions[5],
 		},
 
 		{
+			type: 'input',
 			name: 'github',
 			message: questions[6],
 		},
 		{
+			type: 'input',
 			name: 'email',
 			message: questions[7],
 		},
 		{
+			type: 'input',
 			name: 'preguntas_sugerencias',
 			message: questions[8],
 		},
 		{
 			type: 'rawlist',
-			name: 'Licencia',
+			name: 'licencia',
 			message: 'Elige una licencia para tu proyecto:',
 			choices: [
 				'None',
@@ -91,8 +89,20 @@ inquirer
 			],
 		},
 	])
-	.then((answers) => {
-		console.log(answers);
+	.then((data) => {
+		console.log(data);
+		geneMkd(
+			data.nombre_proyecto,
+			data.licencia,
+			data.descripcion,
+			data.instrucciones_instalacion,
+			data.informacion_uso,
+			data.instrucciones_contribuciones,
+			data.instrucciones_probar,
+			data.github,
+			data.email,
+			data.preguntas_sugerencias
+		);
 	});
 
 // TODO: Crear una función para escribir el archivo README
