@@ -5,7 +5,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const geneMkd = require('./utils/generateMarkdown.js');
-const file = '../README.md';
+const file = './README.md';
 
 // TODO: Crear una serie de preguntas para la entrada de usuario
 //https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#attribution-40-international
